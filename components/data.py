@@ -23,7 +23,7 @@ PERSONAL = {
     "github": "https://github.com/MandapakaGanesh",
     "location": "Phagwara, Punjab, IN",
     "status": "Open to Opportunities",
-    "resume_file": "Mandapaka_Ganesh_Resume (1).pdf",
+    "resume_file": "Mandapaka_Ganesh_Resume.pdf",
     "resume_image": "Mandapaka_Ganesh_Resume_page-0001.jpg",
 }
 
