@@ -47,21 +47,6 @@ def render_resume():
         box-shadow: 0 0 8px #00C896;
         display: inline-block; margin-right: 6px;
     }
-    .resume-viewer-wrap {
-        background: #080C18;
-        border: 1px solid rgba(201,151,58,0.15);
-        border-radius: 16px;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    .resume-viewer-toolbar {
-        display: flex; align-items: center;
-        justify-content: space-between;
-        background: linear-gradient(145deg, #0F1829, #131E30);
-        border: 1px solid rgba(201,151,58,0.15);
-        border-radius: 10px 10px 0 0;
-        padding: 0.7rem 1.2rem;
-    }
     .download-strip {
         background: linear-gradient(135deg,
             rgba(201,151,58,0.06), rgba(0,194,212,0.04));
@@ -124,13 +109,13 @@ def render_resume():
             st.download_button(
                 label="📥  Download Resume PDF",
                 data=pdf_bytes,
-                file_name=PERSONAL["resume_file"],
+                file_name="Mandapaka_Ganesh_Resume.pdf",
                 mime="application/pdf",
                 key="resume_download_top",
                 use_container_width=True,
             )
     else:
-        st.warning("⚠️ Resume PDF not found — place it at `assets/Mandapaka_Ganesh_Resume.pdf`")
+        st.warning(f"⚠️ Resume PDF not found — place it at `assets/{PERSONAL['resume_file']}`")
 
     st.markdown("<div class='grad-divider'></div>", unsafe_allow_html=True)
 
@@ -152,7 +137,7 @@ def render_resume():
             position: sticky; top: 0; z-index: 100;
         }
         .toolbar-title { font-size: 0.85rem; font-weight: 600; color: #F2EDE4; }
-        .toolbar-sub   { font-size: 0.7rem;  color: #607A94; margin-top: 1px; }
+        .toolbar-sub   { font-size: 0.7rem; color: #607A94; margin-top: 1px; }
         .badge {
             font-size: 0.7rem; padding: 0.28rem 0.7rem;
             border-radius: 20px; font-weight: 500;
@@ -160,7 +145,7 @@ def render_resume():
         .badge-gold  { background: rgba(201,151,58,0.15);
                        border: 1px solid rgba(201,151,58,0.35); color: #C9973A; }
         .badge-green { background: rgba(0,200,150,0.12);
-                       border: 1px solid rgba(0,200,150,0.3);  color: #00C896; }
+                       border: 1px solid rgba(0,200,150,0.3); color: #00C896; }
         .viewer {
             background: #080C18;
             border: 1px solid rgba(201,151,58,0.15); border-top: none;
@@ -231,11 +216,8 @@ def render_resume():
             "<div style='font-size:1.1rem;font-weight:600;color:#F2EDE4;"
             "margin-bottom:0.5rem;'>Resume Preview Unavailable</div>"
             "<div style='font-size:0.88rem;color:#607A94;line-height:1.7;'>"
-            "Add <code style='color:#C9973A;background:rgba(201,151,58,0.1);"
-            "padding:2px 8px;border-radius:4px;'>Mandapaka_Ganesh_Resume_page-0001.jpg</code>"
-            " to the <code style='color:#C9973A;background:rgba(201,151,58,0.1);"
-            "padding:2px 8px;border-radius:4px;'>assets/</code> folder.</div>"
-            "</div>",
+            "Add the resume image to the assets/ folder to enable preview."
+            "</div></div>",
             unsafe_allow_html=True,
         )
 
@@ -258,7 +240,7 @@ def render_resume():
             st.download_button(
                 label="📥  Download Resume PDF",
                 data=pdf_bytes,
-                file_name=PERSONAL["resume_file"],
+                file_name="Mandapaka_Ganesh_Resume.pdf",
                 mime="application/pdf",
                 key="resume_download_bottom",
                 use_container_width=True,
